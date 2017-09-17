@@ -67,9 +67,31 @@ $ git add test.txt
 $ git add README.md  
 $ git commit -a -m "Committing test text file and readme to merge master and test2 branches"  
 [master c1ca1c6] Committing test text file and readme to merge master and test2 branches  
-
+$ git checkout test2  
+Switched to branch 'test2'  
+$ git branch -d test1  
+error: The branch 'test1' is not fully merged.  
+If you are sure you want to delete it, run 'git branch -D test1'.  
+$ git checkout master  
+Switched to branch 'master'  
+$ git branch -d test1  
+Deleted branch test1 (was 699f8ca).  
+$ git branch  
+* master  
+  test2  
+$ git checkout test2  
+Switched to branch 'test2'  
+$ git branch -d test2  
+error: Cannot delete branch 'test2' checked out at 'C:/Users/ethan/documents/Git/ICP2017F/ICP2017F'  
+$ git checkout master  
+Switched to branch 'master'  
+$ git branch -d test2  
+Deleted branch test2 (was 7e9fed8).  
+$ git branch  
+* master  
 ```
 (E) The text file is not displayed because the test1 and test2 branches are copies of the master branch, which does not have the test.txt file.  
 (I) The contents of the master branch now includes the test text file.  
 (J) The branches cannot merge because of a conflict in the test.txt file. This arises because there is a test.txt file in both the master and test2 branches.  
 (L) The conflict is the unmerged paths created by trying to merge the master and test2 branches.
+(Q) The difference in trying to delete branch test1 in the master and test2 branches come from the fact that the test1 branch was reated from the master branch, so it was not fully merged with brnach test2.  
