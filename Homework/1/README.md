@@ -63,6 +63,10 @@ Unmerged paths:
         both added:      test.txt  
   
 no changes added to commit (use "git add" and/or "git commit -a")  
+$ git add test.txt  
+$ git add README.md  
+$ git commit -a -m "Committing test text file and readme to merge master and test2 branches"  
+[master c1ca1c6] Committing test text file and readme to merge master and test2 branches  
 
 ```
 (E) The text file is not displayed because the test1 and test2 branches are copies of the master branch, which does not have the test.txt file.  
